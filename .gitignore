@@ -1,0 +1,28 @@
+# Xcode
+build/
+DerivedData/
+*.moved-aside
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+xcuserdata/
+*.xcscmblueprint
+*.xccheckout
+
+# Swift Package Manager
+.swiftpm/
+.build/
+
+# CocoaPods (only relevant if you ever add Pods)
+Pods/
+
+# macOS
+.DS_Store
+
+# Obj-C/Swift specific
+*.hmap
+
+# Playgrounds
+timeline.xctimeline
+playground.xcworkspace

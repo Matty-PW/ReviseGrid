@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		48B8C627304B3BA700DEEFF0 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B8C626304B3BA700DEEFF0 /* Subject.swift */; };
+		48B8C629304B3D4C00DEEFF0 /* RevisionSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B8C628304B3D4C00DEEFF0 /* RevisionSession.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		48B8C607304A143300DEEFF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +32,8 @@
 		48B8C5F9304A143300DEEFF0 /* ReviseGrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReviseGrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48B8C606304A143300DEEFF0 /* ReviseGridTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReviseGridTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48B8C610304A143300DEEFF0 /* ReviseGridUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReviseGridUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		48B8C626304B3BA700DEEFF0 /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
+		48B8C628304B3D4C00DEEFF0 /* RevisionSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionSession.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -75,6 +82,7 @@
 		48B8C5F0304A143200DEEFF0 = {
 			isa = PBXGroup;
 			children = (
+				48B8C624304B3B6800DEEFF0 /* Shared */,
 				48B8C5FB304A143300DEEFF0 /* ReviseGrid */,
 				48B8C609304A143300DEEFF0 /* ReviseGridTests */,
 				48B8C613304A143300DEEFF0 /* ReviseGridUITests */,
@@ -90,6 +98,23 @@
 				48B8C610304A143300DEEFF0 /* ReviseGridUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		48B8C624304B3B6800DEEFF0 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				48B8C625304B3B8C00DEEFF0 /* Models */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		48B8C625304B3B8C00DEEFF0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				48B8C626304B3BA700DEEFF0 /* Subject.swift */,
+				48B8C628304B3D4C00DEEFF0 /* RevisionSession.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +261,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48B8C627304B3BA700DEEFF0 /* Subject.swift in Sources */,
+				48B8C629304B3D4C00DEEFF0 /* RevisionSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,8 +420,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ReviseGrid/ReviseGrid.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -424,8 +453,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ReviseGrid/ReviseGrid.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
