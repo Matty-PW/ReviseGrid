@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct ReviseGridApp: App {
@@ -13,5 +14,6 @@ struct ReviseGridApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(SharedModelContainer.container)
     }
 }
