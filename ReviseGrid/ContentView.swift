@@ -15,6 +15,10 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             List {
+                ContributionGraphView(activities: ContributionGraphCalculator.dayActivities(from: sessions))
+                    .padding(.horizontal)
+                Text("Current streak: \(StreakCalculator.currentStreak(from: ContributionGraphCalculator.dayActivities(from: sessions))) days")
+                    .padding(.horizontal)
                 ForEach(sessions) { session in
                     VStack(alignment: .leading) {
                         Text(session.subject?.name ?? "Unknown subject")
@@ -22,6 +26,7 @@ struct ContentView: View {
                         Text("\(session.durationMinutes) min - \(session.date.formatted(date: .abbreviated, time: .shortened))")
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
+                        
                     }
                 }
             }

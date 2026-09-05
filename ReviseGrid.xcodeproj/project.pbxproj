@@ -11,6 +11,8 @@
 		48B8C629304B3D4C00DEEFF0 /* RevisionSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B8C628304B3D4C00DEEFF0 /* RevisionSession.swift */; };
 		48B8C62B304B416A00DEEFF0 /* SharedModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B8C62A304B416A00DEEFF0 /* SharedModelContainer.swift */; };
 		48B8C62E304CB93B00DEEFF0 /* ContributionGraphCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B8C62D304CB93B00DEEFF0 /* ContributionGraphCalculator.swift */; };
+		48B8C630304CBD1E00DEEFF0 /* StreakCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B8C62F304CBD1E00DEEFF0 /* StreakCalculator.swift */; };
+		48B8C633304CBE3100DEEFF0 /* ContributionGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B8C632304CBE3100DEEFF0 /* ContributionGraphView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		48B8C628304B3D4C00DEEFF0 /* RevisionSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionSession.swift; sourceTree = "<group>"; };
 		48B8C62A304B416A00DEEFF0 /* SharedModelContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedModelContainer.swift; sourceTree = "<group>"; };
 		48B8C62D304CB93B00DEEFF0 /* ContributionGraphCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributionGraphCalculator.swift; sourceTree = "<group>"; };
+		48B8C62F304CBD1E00DEEFF0 /* StreakCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakCalculator.swift; sourceTree = "<group>"; };
+		48B8C632304CBE3100DEEFF0 /* ContributionGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributionGraphView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -107,6 +111,7 @@
 		48B8C624304B3B6800DEEFF0 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				48B8C631304CBE1B00DEEFF0 /* Views */,
 				48B8C62C304CB91A00DEEFF0 /* Logic */,
 				48B8C625304B3B8C00DEEFF0 /* Models */,
 				48B8C62A304B416A00DEEFF0 /* SharedModelContainer.swift */,
@@ -127,8 +132,17 @@
 			isa = PBXGroup;
 			children = (
 				48B8C62D304CB93B00DEEFF0 /* ContributionGraphCalculator.swift */,
+				48B8C62F304CBD1E00DEEFF0 /* StreakCalculator.swift */,
 			);
 			path = Logic;
+			sourceTree = "<group>";
+		};
+		48B8C631304CBE1B00DEEFF0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				48B8C632304CBE3100DEEFF0 /* ContributionGraphView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +290,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				48B8C62E304CB93B00DEEFF0 /* ContributionGraphCalculator.swift in Sources */,
+				48B8C630304CBD1E00DEEFF0 /* StreakCalculator.swift in Sources */,
+				48B8C633304CBE3100DEEFF0 /* ContributionGraphView.swift in Sources */,
 				48B8C627304B3BA700DEEFF0 /* Subject.swift in Sources */,
 				48B8C62B304B416A00DEEFF0 /* SharedModelContainer.swift in Sources */,
 				48B8C629304B3D4C00DEEFF0 /* RevisionSession.swift in Sources */,
