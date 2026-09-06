@@ -26,6 +26,7 @@ struct ContributionGraphView: View {
             }
             .padding(.vertical, 4)
         }
+        .defaultScrollAnchor(.trailing)
     }
     
     private var paddedCells: [DayActivity?] {
