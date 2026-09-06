@@ -16,13 +16,21 @@ struct SubjectPickerView: View {
     
     @State private var newSubjectName: String = ""
     
+    private var selectedSubjectIDBinding: Binding<PersistentIdentifier?> {
+        Binding(
+            get: { selectedSubject?.persistentModelID },
+            set: { newID in selectedSubject = subjects.first { $0.persistentModelID == newID }
+            }
+        )
+    }
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             if !subjects.isEmpty {
-                Picker("Subject", selection: $selectedSubject) {
-                    Text("Select a subject").tag(Subject?.none)
+                Picker("Subject", selection: selectedSubjectIDBinding) {
+                    Text("Select a subject").tag(PersistentIdentifier?.none)
                     ForEach(subjects) { subject in
-                        Text(subject.name).tag(Optional(subject))
+                        Text(subject.name).tag(Optional(subject.persistentModelID))
                     }
                 }
                 .pickerStyle(.menu)
@@ -49,7 +57,8 @@ struct SubjectPickerView: View {
             let subject = Subject(name: trimmedName)
             modelContext.insert(subject)
             selectedSubject = subject
+            newSubjectName = ""
         }
-        newSubjectName = ""
+        
     }
 }

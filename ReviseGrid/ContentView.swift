@@ -38,7 +38,7 @@ struct ContentView: View {
                     showingLogForm = true
                 }
                 .sheet(isPresented: $showingLogForm) {
-                    ManualLogFormView()
+                    TimerLogView()
                 }
             }
         }

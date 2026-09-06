@@ -15,6 +15,7 @@
 		48B8C633304CBE3100DEEFF0 /* ContributionGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B8C632304CBE3100DEEFF0 /* ContributionGraphView.swift */; };
 		48B8C636304DBFA200DEEFF0 /* SubjectPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B8C635304DBFA200DEEFF0 /* SubjectPickerView.swift */; };
 		48B8C638304DC46500DEEFF0 /* ManualLogFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B8C637304DC46500DEEFF0 /* ManualLogFormView.swift */; };
+		48B8C63A304DCCDC00DEEFF0 /* TimerLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B8C639304DCCDC00DEEFF0 /* TimerLogView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		48B8C632304CBE3100DEEFF0 /* ContributionGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributionGraphView.swift; sourceTree = "<group>"; };
 		48B8C635304DBFA200DEEFF0 /* SubjectPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectPickerView.swift; sourceTree = "<group>"; };
 		48B8C637304DC46500DEEFF0 /* ManualLogFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualLogFormView.swift; sourceTree = "<group>"; };
+		48B8C639304DCCDC00DEEFF0 /* TimerLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerLogView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -155,6 +157,7 @@
 			children = (
 				48B8C635304DBFA200DEEFF0 /* SubjectPickerView.swift */,
 				48B8C637304DC46500DEEFF0 /* ManualLogFormView.swift */,
+				48B8C639304DCCDC00DEEFF0 /* TimerLogView.swift */,
 			);
 			path = LogPanel;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				48B8C630304CBD1E00DEEFF0 /* StreakCalculator.swift in Sources */,
 				48B8C633304CBE3100DEEFF0 /* ContributionGraphView.swift in Sources */,
 				48B8C627304B3BA700DEEFF0 /* Subject.swift in Sources */,
+				48B8C63A304DCCDC00DEEFF0 /* TimerLogView.swift in Sources */,
 				48B8C636304DBFA200DEEFF0 /* SubjectPickerView.swift in Sources */,
 				48B8C62B304B416A00DEEFF0 /* SharedModelContainer.swift in Sources */,
 				48B8C629304B3D4C00DEEFF0 /* RevisionSession.swift in Sources */,

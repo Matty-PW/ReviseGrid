@@ -10,7 +10,6 @@ import SwiftData
 
 @Model
 final class Subject {
-    var id: UUID
     var name: String
     var dateAdded: Date
     
@@ -18,7 +17,6 @@ final class Subject {
     var sessions: [RevisionSession] = []
     
     init(name: String) {
-        self.id = UUID()
         self.name = name
         self.dateAdded = .now
     }
