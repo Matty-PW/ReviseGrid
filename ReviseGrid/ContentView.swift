@@ -12,6 +12,8 @@ struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \RevisionSession.date, order: .reverse) private var sessions: [RevisionSession]
     
+    @State private var showingLogForm = false
+    
     var body: some View {
         NavigationStack {
             List {
@@ -32,23 +34,13 @@ struct ContentView: View {
             }
             .navigationTitle("ReviseGrid (test)")
             .toolbar {
-                Button("Add Test Session") {
-                    addTestSession()
+                Button("Log session") {
+                    showingLogForm = true
+                }
+                .sheet(isPresented: $showingLogForm) {
+                    ManualLogFormView()
                 }
             }
-        }
-    }
-    
-    private func addTestSession() {
-        let subject = Subject(name: "Computing")
-        let session = RevisionSession(date: .now, durationMinutes: 30, subject: subject)
-        modelContext.insert(subject)
-        modelContext.insert(session)
-        
-        do {
-            try modelContext.save()
-        } catch {
-            print("Failed to save: \(error)")
         }
     }
 }
