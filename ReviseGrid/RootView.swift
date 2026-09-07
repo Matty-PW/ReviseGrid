@@ -13,7 +13,7 @@ struct RootView: View {
     var body: some View {
         ZStack {
             ContentView(panelViewModel: panelViewModel)
-            LogPanelContainer(panelViewModel: panelViewModel)
+            LogPanelContainer(viewModel: panelViewModel)
         }
     }
 }
