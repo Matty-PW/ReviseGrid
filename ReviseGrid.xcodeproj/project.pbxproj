@@ -16,6 +16,9 @@
 		48B8C636304DBFA200DEEFF0 /* SubjectPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B8C635304DBFA200DEEFF0 /* SubjectPickerView.swift */; };
 		48B8C638304DC46500DEEFF0 /* ManualLogFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B8C637304DC46500DEEFF0 /* ManualLogFormView.swift */; };
 		48B8C63A304DCCDC00DEEFF0 /* TimerLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B8C639304DCCDC00DEEFF0 /* TimerLogView.swift */; };
+		48DE7306304F4D9B00C61453 /* LogPanelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DE7305304F4D9B00C61453 /* LogPanelViewModel.swift */; };
+		48DE7308304F4F0B00C61453 /* LogChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DE7307304F4F0B00C61453 /* LogChoiceView.swift */; };
+		48DE730A304F505C00C61453 /* LogPanelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DE7309304F505C00C61453 /* LogPanelContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,9 @@
 		48B8C635304DBFA200DEEFF0 /* SubjectPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectPickerView.swift; sourceTree = "<group>"; };
 		48B8C637304DC46500DEEFF0 /* ManualLogFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualLogFormView.swift; sourceTree = "<group>"; };
 		48B8C639304DCCDC00DEEFF0 /* TimerLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerLogView.swift; sourceTree = "<group>"; };
+		48DE7305304F4D9B00C61453 /* LogPanelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogPanelViewModel.swift; sourceTree = "<group>"; };
+		48DE7307304F4F0B00C61453 /* LogChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogChoiceView.swift; sourceTree = "<group>"; };
+		48DE7309304F505C00C61453 /* LogPanelContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogPanelContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -96,6 +102,7 @@
 		48B8C5F0304A143200DEEFF0 = {
 			isa = PBXGroup;
 			children = (
+				48DE7304304F4D7D00C61453 /* ViewModels */,
 				48B8C624304B3B6800DEEFF0 /* Shared */,
 				48B8C5FB304A143300DEEFF0 /* ReviseGrid */,
 				48B8C609304A143300DEEFF0 /* ReviseGridTests */,
@@ -160,6 +167,16 @@
 				48B8C639304DCCDC00DEEFF0 /* TimerLogView.swift */,
 			);
 			path = LogPanel;
+			sourceTree = "<group>";
+		};
+		48DE7304304F4D7D00C61453 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				48DE7305304F4D9B00C61453 /* LogPanelViewModel.swift */,
+				48DE7307304F4F0B00C61453 /* LogChoiceView.swift */,
+				48DE7309304F505C00C61453 /* LogPanelContainer.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,11 +324,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				48B8C62E304CB93B00DEEFF0 /* ContributionGraphCalculator.swift in Sources */,
+				48DE7308304F4F0B00C61453 /* LogChoiceView.swift in Sources */,
 				48B8C630304CBD1E00DEEFF0 /* StreakCalculator.swift in Sources */,
 				48B8C633304CBE3100DEEFF0 /* ContributionGraphView.swift in Sources */,
 				48B8C627304B3BA700DEEFF0 /* Subject.swift in Sources */,
 				48B8C63A304DCCDC00DEEFF0 /* TimerLogView.swift in Sources */,
 				48B8C636304DBFA200DEEFF0 /* SubjectPickerView.swift in Sources */,
+				48DE730A304F505C00C61453 /* LogPanelContainer.swift in Sources */,
+				48DE7306304F4D9B00C61453 /* LogPanelViewModel.swift in Sources */,
 				48B8C62B304B416A00DEEFF0 /* SharedModelContainer.swift in Sources */,
 				48B8C629304B3D4C00DEEFF0 /* RevisionSession.swift in Sources */,
 				48B8C638304DC46500DEEFF0 /* ManualLogFormView.swift in Sources */,

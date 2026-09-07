@@ -10,7 +10,7 @@ import SwiftData
 
 struct ManualLogFormView: View {
     @Environment(\.modelContext) private var modelContext
-    @Environment(\.dismiss) private var dismiss
+    let onDismiss: () -> Void
     
     @State private var selectedSubject: Subject?
     @State private var durationMinutes: Int = 30
@@ -36,7 +36,7 @@ struct ManualLogFormView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") { dismiss() }
+                    Button("Cancel") { onDismiss() }
                         .disabled(selectedSubject == nil)
                 }
                 ToolbarItem(placement: .confirmationAction) {
@@ -58,6 +58,6 @@ struct ManualLogFormView: View {
             print("Failed to save session: \(error)")
         }
         
-        dismiss()
+        onDismiss()
     }
 }

@@ -9,6 +9,8 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
+    var panelViewModel: LogPanelViewModel
+    
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \RevisionSession.date, order: .reverse) private var sessions: [RevisionSession]
     
@@ -35,16 +37,9 @@ struct ContentView: View {
             .navigationTitle("ReviseGrid (test)")
             .toolbar {
                 Button("Log session") {
-                    showingLogForm = true
-                }
-                .sheet(isPresented: $showingLogForm) {
-                    TimerLogView()
+                    panelViewModel.present()
                 }
             }
         }
     }
-}
-
-#Preview {
-    ContentView()
 }

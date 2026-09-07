@@ -12,7 +12,7 @@ import SwiftData
 struct ReviseGridApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
         }
         .modelContainer(SharedModelContainer.container)
     }
