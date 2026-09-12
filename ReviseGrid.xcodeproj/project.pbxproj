@@ -14,6 +14,7 @@
 		48676D8D3055CF5900F9D461 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B8C626304B3BA700DEEFF0 /* Subject.swift */; };
 		48676D8E3055CF6600F9D461 /* RevisionSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B8C628304B3D4C00DEEFF0 /* RevisionSession.swift */; };
 		48676D8F3055CF6A00F9D461 /* SharedModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B8C62A304B416A00DEEFF0 /* SharedModelContainer.swift */; };
+		48676D943055FA6D00F9D461 /* RevisionWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 48676D713055CA0900F9D461 /* RevisionWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		48B8C627304B3BA700DEEFF0 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B8C626304B3BA700DEEFF0 /* Subject.swift */; };
 		48B8C629304B3D4C00DEEFF0 /* RevisionSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B8C628304B3D4C00DEEFF0 /* RevisionSession.swift */; };
 		48B8C62B304B416A00DEEFF0 /* SharedModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B8C62A304B416A00DEEFF0 /* SharedModelContainer.swift */; };
@@ -59,6 +60,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				48676D943055FA6D00F9D461 /* RevisionWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
