@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import WidgetKit
 
 struct ManualLogFormView: View {
     @Environment(\.modelContext) private var modelContext
@@ -54,6 +55,7 @@ struct ManualLogFormView: View {
         
         do {
             try modelContext.save()
+            WidgetCenter.shared.reloadAllTimelines()
         } catch {
             print("Failed to save session: \(error)")
         }
