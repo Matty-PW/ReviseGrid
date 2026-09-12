@@ -2,7 +2,7 @@
 //  RevisionWidgetBundle.swift
 //  RevisionWidget
 //
-//  Created by Matty on 11/09/2026.
+//  Created by Matty on 12/09/2026.
 //
 
 import WidgetKit
@@ -12,6 +12,5 @@ import SwiftUI
 struct RevisionWidgetBundle: WidgetBundle {
     var body: some Widget {
         RevisionWidget()
-        RevisionWidgetControl()
     }
 }
