@@ -17,6 +17,10 @@
 		48676D943055FA6D00F9D461 /* RevisionWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 48676D713055CA0900F9D461 /* RevisionWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		48676D963058946600F9D461 /* SubjectTotalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48676D953058946600F9D461 /* SubjectTotalsView.swift */; };
 		48676D973058946600F9D461 /* SubjectTotalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48676D953058946600F9D461 /* SubjectTotalsView.swift */; };
+		48676D993059A0A200F9D461 /* Colour+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48676D983059A0A200F9D461 /* Colour+Hex.swift */; };
+		48676D9A3059A0A200F9D461 /* Colour+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48676D983059A0A200F9D461 /* Colour+Hex.swift */; };
+		48676D9C3059A2C500F9D461 /* ContributionLevelColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48676D9B3059A2C500F9D461 /* ContributionLevelColor.swift */; };
+		48676D9D3059A2C500F9D461 /* ContributionLevelColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48676D9B3059A2C500F9D461 /* ContributionLevelColor.swift */; };
 		48B8C627304B3BA700DEEFF0 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B8C626304B3BA700DEEFF0 /* Subject.swift */; };
 		48B8C629304B3D4C00DEEFF0 /* RevisionSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B8C628304B3D4C00DEEFF0 /* RevisionSession.swift */; };
 		48B8C62B304B416A00DEEFF0 /* SharedModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B8C62A304B416A00DEEFF0 /* SharedModelContainer.swift */; };
@@ -73,6 +77,8 @@
 		48676D713055CA0900F9D461 /* RevisionWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RevisionWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		48676D8A3055CD9F00F9D461 /* RevisionWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RevisionWidgetExtension.entitlements; sourceTree = "<group>"; };
 		48676D953058946600F9D461 /* SubjectTotalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectTotalsView.swift; sourceTree = "<group>"; };
+		48676D983059A0A200F9D461 /* Colour+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Colour+Hex.swift"; sourceTree = "<group>"; };
+		48676D9B3059A2C500F9D461 /* ContributionLevelColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributionLevelColor.swift; sourceTree = "<group>"; };
 		48B8C5F9304A143300DEEFF0 /* ReviseGrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReviseGrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48B8C606304A143300DEEFF0 /* ReviseGridTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReviseGridTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48B8C610304A143300DEEFF0 /* ReviseGridUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReviseGridUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -223,6 +229,8 @@
 				48B8C634304DBF8B00DEEFF0 /* LogPanel */,
 				48B8C632304CBE3100DEEFF0 /* ContributionGraphView.swift */,
 				48676D953058946600F9D461 /* SubjectTotalsView.swift */,
+				48676D983059A0A200F9D461 /* Colour+Hex.swift */,
+				48676D9B3059A2C500F9D461 /* ContributionLevelColor.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -439,8 +447,10 @@
 				48676D8B3055CF4500F9D461 /* ContributionGraphCalculator.swift in Sources */,
 				48676D973058946600F9D461 /* SubjectTotalsView.swift in Sources */,
 				48676D8C3055CF5100F9D461 /* StreakCalculator.swift in Sources */,
+				48676D993059A0A200F9D461 /* Colour+Hex.swift in Sources */,
 				48676D8F3055CF6A00F9D461 /* SharedModelContainer.swift in Sources */,
 				48676D8E3055CF6600F9D461 /* RevisionSession.swift in Sources */,
+				48676D9D3059A2C500F9D461 /* ContributionLevelColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +460,7 @@
 			files = (
 				48B8C62E304CB93B00DEEFF0 /* ContributionGraphCalculator.swift in Sources */,
 				48DE7308304F4F0B00C61453 /* LogChoiceView.swift in Sources */,
+				48676D9C3059A2C500F9D461 /* ContributionLevelColor.swift in Sources */,
 				48676D963058946600F9D461 /* SubjectTotalsView.swift in Sources */,
 				48B8C630304CBD1E00DEEFF0 /* StreakCalculator.swift in Sources */,
 				48B8C633304CBE3100DEEFF0 /* ContributionGraphView.swift in Sources */,
@@ -458,6 +469,7 @@
 				48B8C636304DBFA200DEEFF0 /* SubjectPickerView.swift in Sources */,
 				48DE730A304F505C00C61453 /* LogPanelContainer.swift in Sources */,
 				48DE7306304F4D9B00C61453 /* LogPanelViewModel.swift in Sources */,
+				48676D9A3059A0A200F9D461 /* Colour+Hex.swift in Sources */,
 				48B8C62B304B416A00DEEFF0 /* SharedModelContainer.swift in Sources */,
 				48B8C629304B3D4C00DEEFF0 /* RevisionSession.swift in Sources */,
 				48B8C638304DC46500DEEFF0 /* ManualLogFormView.swift in Sources */,
