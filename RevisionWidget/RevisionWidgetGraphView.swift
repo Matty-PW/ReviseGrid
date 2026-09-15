@@ -31,14 +31,6 @@ struct RevisionWidgetGraphView: View {
     }
     
     private func color(forLevel level: Int?) -> Color {
-        switch level {
-        case nil: return .clear
-        case 0: return Color.gray.opacity(0.15)
-        case 1: return Color.green.opacity(0.3)
-        case 2: return Color.green.opacity(0.5)
-        case 3: return Color.green.opacity(0.75)
-        default: return .green
-
-        }
+        ContributionLevelColor.color(forLevel: level)
     }
 }

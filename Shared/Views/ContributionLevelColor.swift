@@ -1,6 +1,6 @@
 //
 //  ContributionLevelColor.swift
-//  RevisionWidgetExtension
+//  ReviseGrid
 //
 //  Created by Matty on 15/09/2026.
 //
@@ -12,11 +12,11 @@ enum ContributionLevelColor {
         guard let level else { return .clear }
         
         switch level {
-        case 0: return Color(light: "ebedf0", dark: "161b22")
-        case 1: return Color(light: "9be9a8", dark: "0e4429")
-        case 2: return Color(light: "40c463", dark: "006d32")
-        case 3: return Color(light: "30a14e", dark: "26a641")
-        default: return Color(light: "216e39", dark: "39d353")
+        case 0: return Color(uiColor: .tertiarySystemFill)
+        case 1: return Color(light: "c6f0d2", dark: "14452a")
+        case 2: return Color(light: "7ddc98", dark: "1e7a3f")
+        case 3: return Color(light: "34b65b", dark: "2fb456")
+        default: return Color(light: "1a7a3c", dark: "5fe586")
         }
     }
 }
