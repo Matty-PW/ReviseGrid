@@ -4,7 +4,7 @@ A GitHub style contribution graph for your revision - log sessions from a home s
  
 ## Why
  
-Contribution graphs are motivating. The visual streak of GitHubs own graph is an effective habit hook. ReviseGrid applies that same idea to studying - every subject you revise adds to a single daily square, and the more time you put in on a given day, the greener it gets.
+Contribution graphs are motivating. The visual streak of GitHubs own graph is a good habit hook. ReviseGrid applies that same idea to studying - every subject you revise adds to a single daily square, and the more time you put in on a given day, the greener it gets.
  
 ## Features
  
@@ -18,7 +18,7 @@ Contribution graphs are motivating. The visual streak of GitHubs own graph is an
 ## Planned
  
 - A dedicated screen showing total time revised per subject.
-- Per subject contribution graphs (the data model already supports this).
+- Per subject contribution graphs.
 - A Live Activity / Dynamic Island view for the running timer.
 ## Tech Stack
  
