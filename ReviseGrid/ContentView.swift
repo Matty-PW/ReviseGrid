@@ -13,6 +13,7 @@ struct ContentView: View {
     
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \RevisionSession.date, order: .reverse) private var sessions: [RevisionSession]
+    @AppStorage("userName") private var userName = ""
     
     @State private var showingLogForm = false
     
@@ -34,7 +35,7 @@ struct ContentView: View {
                     }
                 }
             }
-            .navigationTitle("ReviseGrid (test)")
+            .navigationTitle(userName.isEmpty ? "ReviseGrid" : "Welcome, \(userName)")
             .toolbar {
                 Button("Log session") {
                     panelViewModel.present()
