@@ -10,8 +10,8 @@ import SwiftUI
 struct RevisionWidgetGraphView: View {
     let activities: [DayActivity]
     
-    private let cellSize: CGFloat = 8
-    private let cellSpacing: CGFloat = 2
+    private let cellSize: CGFloat = 10
+    private let cellSpacing: CGFloat = 2.5
     
     var body: some View {
         LazyHGrid(rows: Array(repeating: GridItem(.fixed(cellSize), spacing: cellSpacing), count: 7), spacing: cellSpacing
