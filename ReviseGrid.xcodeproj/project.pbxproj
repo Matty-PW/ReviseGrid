@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		482AAE73305EC864005077BF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482AAE72305EC864005077BF /* SettingsView.swift */; };
+		482AAE74305EC864005077BF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482AAE72305EC864005077BF /* SettingsView.swift */; };
 		48676D723055CA0900F9D461 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48DDE47D30509B510083CA78 /* WidgetKit.framework */; };
 		48676D733055CA0900F9D461 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48DDE47F30509B510083CA78 /* SwiftUI.framework */; };
 		48676D8B3055CF4500F9D461 /* ContributionGraphCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B8C62D304CB93B00DEEFF0 /* ContributionGraphCalculator.swift */; };
@@ -75,6 +77,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		482AAE72305EC864005077BF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		48676D713055CA0900F9D461 /* RevisionWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RevisionWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		48676D8A3055CD9F00F9D461 /* RevisionWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RevisionWidgetExtension.entitlements; sourceTree = "<group>"; };
 		48676D953058946600F9D461 /* SubjectTotalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectTotalsView.swift; sourceTree = "<group>"; };
@@ -234,6 +237,7 @@
 				48676D983059A0A200F9D461 /* Colour+Hex.swift */,
 				48676D9B3059A2C500F9D461 /* ContributionLevelColor.swift */,
 				48676D9E3059ABDF00F9D461 /* OnboardingView.swift */,
+				482AAE72305EC864005077BF /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -448,6 +452,7 @@
 			files = (
 				48676D8D3055CF5900F9D461 /* Subject.swift in Sources */,
 				48676D8B3055CF4500F9D461 /* ContributionGraphCalculator.swift in Sources */,
+				482AAE74305EC864005077BF /* SettingsView.swift in Sources */,
 				48676D973058946600F9D461 /* SubjectTotalsView.swift in Sources */,
 				48676D8C3055CF5100F9D461 /* StreakCalculator.swift in Sources */,
 				48676D993059A0A200F9D461 /* Colour+Hex.swift in Sources */,
@@ -466,6 +471,7 @@
 				48676D9C3059A2C500F9D461 /* ContributionLevelColor.swift in Sources */,
 				48676D963058946600F9D461 /* SubjectTotalsView.swift in Sources */,
 				48B8C630304CBD1E00DEEFF0 /* StreakCalculator.swift in Sources */,
+				482AAE73305EC864005077BF /* SettingsView.swift in Sources */,
 				48B8C633304CBE3100DEEFF0 /* ContributionGraphView.swift in Sources */,
 				48B8C627304B3BA700DEEFF0 /* Subject.swift in Sources */,
 				48B8C63A304DCCDC00DEEFF0 /* TimerLogView.swift in Sources */,

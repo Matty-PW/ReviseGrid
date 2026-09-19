@@ -24,6 +24,11 @@ struct RootView: View {
                         .tabItem {
                             Label("Totals", systemImage: "chart.bar.fill")
                         }
+                    
+                    SettingsView()
+                        .tabItem {
+                            Label("Settings", systemImage: "gearshape.fill")
+                        }
                 }
                 
                 LogPanelContainer(viewModel: panelViewModel)
