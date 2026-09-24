@@ -4,17 +4,17 @@ A GitHub style contribution graph for your revision - log sessions from a home s
  
 ## Why
  
-Contribution graphs are motivating. The visual streak of GitHubs own graph is a good habit hook. ReviseGrid applies that same idea to studying - every subject you revise adds to a single daily square, and the more time you put in on a given day, the greener it gets.
+Contribution graphs are motivating. The visual streak of GitHubs own graph is a great habit hook. ReviseGrid applies that same idea to studying - every subject you revise adds to a single daily square, and the more time you put in on a given day, the greener it gets.
  
 ## Features
  
-- **Home screen widget** showing a compact GitHub style contribution graph of your recent revision activity, plus your current streak.
-- **Tap-to-log panel** - tapping the widget opens the app straight into a panel that drops down from the top of the screen, offering a choice between starting a timer or logging manually.
+- **Home screen widget** - a compact GitHub style contribution graph of your recent revision activity, plus your current streak.
+- **Tap to log panel** - tapping the widget opens the app straight into a panel that drops down from the top of the screen, offering a choice between starting a timer or logging manually.
 - **Live timer** - start it when you sit down to revise, stop it when you're done, and the duration is logged automatically.
 - **Manual logging** - pick a subject, a duration, and a date, for sessions you forgot to log.
 - **Automatic streak tracking** - your streak counts any day you logged revision time at all, regardless of subject, and doesn't reset just because today hasn't happened yet.
 - **Instant widget refresh** - the widget updates within seconds of logging a session, not just once a day.
-- Subjects are created on the fly the first time you type a new one, and reused after that.
+- **Subjects created as you go** - add a subject once and it is saved for next time.
 ## Planned
  
 - A dedicated screen showing total time revised per subject.
