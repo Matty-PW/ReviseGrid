@@ -17,6 +17,7 @@ struct ManualLogFormView: View {
     @State private var durationMinutes: Int = 30
     @State private var date: Date = .now
     
+    
     var body: some View {
         NavigationStack {
             Form {
@@ -38,7 +39,6 @@ struct ManualLogFormView: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { onDismiss() }
-                        .disabled(selectedSubject == nil)
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Save") { save() }
