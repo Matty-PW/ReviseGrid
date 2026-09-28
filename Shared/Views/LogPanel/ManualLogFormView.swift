@@ -17,6 +17,7 @@ struct ManualLogFormView: View {
     @State private var durationMinutes: Int = 30
     @State private var date: Date = .now
     
+    private let durationPresets = [15, 30, 45, 60, 90]
     
     var body: some View {
         NavigationStack {
@@ -26,6 +27,11 @@ struct ManualLogFormView: View {
                 }
                 
                 Section("Duration") {
+                    HStack(spacing: 8) {
+                        ForEach(durationPresets, id: \.self) { preset in
+                            durationChip(preset)
+                        }
+                    }
                     Stepper("\(durationMinutes) minutes", value: $durationMinutes, in: 5...600, step: 5)
                 }
                 
@@ -46,6 +52,21 @@ struct ManualLogFormView: View {
                 }
             }
         }
+    }
+    
+    private func durationChip(_ preset: Int) -> some View {
+        let isSelected = durationMinutes == preset
+        return Button {
+            durationMinutes = preset
+        } label: {
+            Text("\(preset)m")
+                .font(.subheadline.weight(isSelected ? .semibold : .regular))
+                .padding(.horizontal, 10)
+                .padding(.vertical, 8)
+                .background(Capsule().fill(isSelected ? Color.accentColor : Color.primary.opacity(0.08)))
+                .foregroundStyle(isSelected ? .white : .primary)
+        }
+        .buttonStyle(.plain)
     }
     
     private func save() {
