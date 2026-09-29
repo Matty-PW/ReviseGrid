@@ -15,36 +15,63 @@ struct SubjectPickerView: View {
     @Query(sort: \Subject.name) private var subjects: [Subject]
     
     @State private var newSubjectName: String = ""
-    
-    private var selectedSubjectIDBinding: Binding<PersistentIdentifier?> {
-        Binding(
-            get: { selectedSubject?.persistentModelID },
-            set: { newID in selectedSubject = subjects.first { $0.persistentModelID == newID }
-            }
-        )
-    }
-    
+    @State private var isAddingSubject = false
+    @FocusState private var isNewSubjectFieldFocused: Bool
+        
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            if !subjects.isEmpty {
-                Picker("Subject", selection: selectedSubjectIDBinding) {
-                    Text("Select a subject").tag(PersistentIdentifier?.none)
+        VStack(alignment: .leading, spacing: 10) {
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 8) {
                     ForEach(subjects) { subject in
-                        Text(subject.name).tag(Optional(subject.persistentModelID))
+                        chip(for: subject)
                     }
+                    addChip
                 }
-                .pickerStyle(.menu)
+                .padding(.vertical, 2)
             }
             
-            HStack {
-                TextField("New subject name", text: $newSubjectName)
-                    .textFieldStyle(.roundedBorder)
-                Button("Add") {
-                    addSubject()
+            if isAddingSubject {
+                HStack {
+                    TextField("New subject name", text: $newSubjectName)
+                        .textFieldStyle(.roundedBorder)
+                        .focused($isNewSubjectFieldFocused)
+                        .onSubmit { addSubject() }
+                    Button("Add") { addSubject() }
+                        .disabled(newSubjectName.trimmingCharacters(in: .whitespaces).isEmpty)
                 }
-                .disabled(newSubjectName.trimmingCharacters(in: .whitespaces).isEmpty)
+                .transition(.opacity.combined(with: .move(edge: .top)))
             }
         }
+        .animation(.easeInOut(duration: 0.2), value: isAddingSubject)
+    }
+    
+    private func chip(for subject: Subject) -> some View {
+        let isSelected = selectedSubject?.persistentModelID == subject.persistentModelID
+        return Button {
+            selectedSubject = subject
+        } label: {
+            Text(subject.name)
+                .font(.subheadline.weight(isSelected ? .semibold : .regular))
+                .padding(.horizontal, 14)
+                .padding(.vertical, 8)
+                .background(Capsule().fill(isSelected ? Color.accentColor : Color.primary.opacity(0.08)))
+        }
+        .buttonStyle(.plain)
+    }
+    
+    private var addChip: some View {
+        Button {
+            isAddingSubject = true
+            isNewSubjectFieldFocused = true
+        } label: {
+            Label("New", systemImage: "plus")
+                .font(.subheadline)
+                .padding(.horizontal, 14)
+                .padding(.vertical, 8)
+                .background(Capsule().strokeBorder(Color.accentColor, style: StrokeStyle(lineWidth: 1, dash: [4])))
+                .foregroundStyle(Color.accentColor)
+        }
+        .buttonStyle(.plain)
     }
     
     private func addSubject() {
@@ -57,8 +84,8 @@ struct SubjectPickerView: View {
             let subject = Subject(name: trimmedName)
             modelContext.insert(subject)
             selectedSubject = subject
-            newSubjectName = ""
         }
-        
+        newSubjectName = ""
+        isAddingSubject = false
     }
 }
