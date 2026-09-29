@@ -16,35 +16,55 @@ struct TimerLogView: View {
     @State private var selectedSubject: Subject?
     @State private var startDate: Date?
     @State private var showingCancelConfirmation = false
+    @State private var pulse = false
+    
+    private var isRunning: Bool { startDate != nil }
     
     var body: some View {
         NavigationStack {
             VStack(spacing: 24) {
                 SubjectPickerView(selectedSubject: $selectedSubject)
-                    .disabled(startDate != nil)
+                    .disabled(isRunning)
                     .padding(.horizontal)
                 
+                VStack(spacing: 8) {
                 if let startDate {
                     Text(startDate, style: .timer)
-                        .font(.system(size: 48, weight: .semibold, design: .rounded))
-                        .foregroundStyle(.secondary)
+                } else {
+                    Text("00:00")
                 }
-                
-                Button(startDate == nil ? "Start" : "Stop") {
-                    startDate == nil ? start() : stop()
+            }
+            .font(.system(size: 56, weight: .bold, design: .rounded))
+            .monospacedDigit()
+            .foregroundStyle(isRunning ? .primary : .secondary)
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 20)
+            .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 20))
+            .padding(.horizontal)
+            
+                Button {
+                    isRunning ? stop() : start()
+                } label: {
+                    Text(isRunning ? "Stop" : "Start")
+                        .font(.headline)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 4)
                 }
                 .buttonStyle(.borderedProminent)
                 .disabled(selectedSubject == nil)
+                .tint(isRunning ? .red : .green)
+                .controlSize(.large)
+                .padding(.horizontal)
                 
                 Spacer()
             }
-            .padding(.top, 32)
+            .padding(.top, 24)
             .navigationTitle("Timer")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") {
-                        if startDate != nil {
+                        if isRunning {
                             showingCancelConfirmation = true
                         } else {
                             onDismiss()
