@@ -15,9 +15,10 @@ Contribution graphs are motivating. The visual streak of GitHubs own graph is a 
 - **Automatic streak tracking** - your streak counts any day you logged revision time at all, regardless of subject, and doesn't reset just because today hasn't happened yet.
 - **Instant widget refresh** - the widget updates within seconds of logging a session, not just once a day.
 - **Subjects created as you go** - add a subject once and it is saved for next time.
+- **View subject totals** - totals screen where you can view total time on each subject per day / week / month / all time.
+- **Onboarding screens** - onboarding screens ask for your name and what subjects you want to start off with.
 ## Planned
  
-- A dedicated screen showing total time revised per subject.
 - Per subject contribution graphs.
 - A Live Activity / Dynamic Island view for the running timer.
 ## Tech Stack
