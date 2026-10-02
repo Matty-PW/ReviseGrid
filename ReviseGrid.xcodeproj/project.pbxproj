@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		482AAE73305EC864005077BF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482AAE72305EC864005077BF /* SettingsView.swift */; };
 		482AAE74305EC864005077BF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482AAE72305EC864005077BF /* SettingsView.swift */; };
+		484E71D4307051B300913562 /* TimerActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484E71D3307051B300913562 /* TimerActivityAttributes.swift */; };
+		484E71D5307051B300913562 /* TimerActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484E71D3307051B300913562 /* TimerActivityAttributes.swift */; };
 		48676D723055CA0900F9D461 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48DDE47D30509B510083CA78 /* WidgetKit.framework */; };
 		48676D733055CA0900F9D461 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48DDE47F30509B510083CA78 /* SwiftUI.framework */; };
 		48676D8B3055CF4500F9D461 /* ContributionGraphCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B8C62D304CB93B00DEEFF0 /* ContributionGraphCalculator.swift */; };
@@ -78,6 +80,7 @@
 
 /* Begin PBXFileReference section */
 		482AAE72305EC864005077BF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		484E71D3307051B300913562 /* TimerActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerActivityAttributes.swift; sourceTree = "<group>"; };
 		48676D713055CA0900F9D461 /* RevisionWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RevisionWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		48676D8A3055CD9F00F9D461 /* RevisionWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RevisionWidgetExtension.entitlements; sourceTree = "<group>"; };
 		48676D953058946600F9D461 /* SubjectTotalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectTotalsView.swift; sourceTree = "<group>"; };
@@ -173,6 +176,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		484E71D23070518F00913562 /* LiveActivity */ = {
+			isa = PBXGroup;
+			children = (
+				484E71D3307051B300913562 /* TimerActivityAttributes.swift */,
+			);
+			path = LiveActivity;
+			sourceTree = "<group>";
+		};
 		48B8C5F0304A143200DEEFF0 = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +213,7 @@
 		48B8C624304B3B6800DEEFF0 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				484E71D23070518F00913562 /* LiveActivity */,
 				48B8C631304CBE1B00DEEFF0 /* Views */,
 				48B8C62C304CB91A00DEEFF0 /* Logic */,
 				48B8C625304B3B8C00DEEFF0 /* Models */,
@@ -450,6 +462,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				484E71D5307051B300913562 /* TimerActivityAttributes.swift in Sources */,
 				48676D8D3055CF5900F9D461 /* Subject.swift in Sources */,
 				48676D8B3055CF4500F9D461 /* ContributionGraphCalculator.swift in Sources */,
 				482AAE74305EC864005077BF /* SettingsView.swift in Sources */,
@@ -473,6 +486,7 @@
 				48B8C630304CBD1E00DEEFF0 /* StreakCalculator.swift in Sources */,
 				482AAE73305EC864005077BF /* SettingsView.swift in Sources */,
 				48B8C633304CBE3100DEEFF0 /* ContributionGraphView.swift in Sources */,
+				484E71D4307051B300913562 /* TimerActivityAttributes.swift in Sources */,
 				48B8C627304B3BA700DEEFF0 /* Subject.swift in Sources */,
 				48B8C63A304DCCDC00DEEFF0 /* TimerLogView.swift in Sources */,
 				48676D9F3059ABDF00F9D461 /* OnboardingView.swift in Sources */,
@@ -713,6 +727,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -746,6 +761,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

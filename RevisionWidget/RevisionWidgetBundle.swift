@@ -12,5 +12,6 @@ import SwiftUI
 struct RevisionWidgetBundle: WidgetBundle {
     var body: some Widget {
         RevisionWidget()
+        TimerLiveActivity()
     }
 }

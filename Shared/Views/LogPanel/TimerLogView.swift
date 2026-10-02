@@ -8,26 +8,29 @@
 import SwiftUI
 import SwiftData
 import WidgetKit
+import ActivityKit
 
 struct TimerLogView: View {
     @Environment(\.modelContext) private var modelContext
     let onDismiss: () -> Void
     
+    @Query(sort: \Subject.name) private var subjects: [Subject]
+    
     @State private var selectedSubject: Subject?
     @State private var startDate: Date?
     @State private var showingCancelConfirmation = false
-    @State private var pulse = false
+    @State private var currentActivity: Activity<TimerActivityAttributes>?
     
     private var isRunning: Bool { startDate != nil }
     
     var body: some View {
         NavigationStack {
-            VStack(spacing: 24) {
+            VStack(spacing: 28) {
                 SubjectPickerView(selectedSubject: $selectedSubject)
                     .disabled(isRunning)
                     .padding(.horizontal)
                 
-                VStack(spacing: 8) {
+                Group {
                 if let startDate {
                     Text(startDate, style: .timer)
                 } else {
@@ -79,10 +82,32 @@ struct TimerLogView: View {
                 Text("Your timer is still running. Cancelling now won't save this session.")
             }
         }
+        .task {
+            reattachToRunningActivityIfNeeded()
+        }
+    }
+    
+    private func reattachToRunningActivityIfNeeded() {
+        guard currentActivity == nil, let existing = Activity<TimerActivityAttributes>.activities.first else { return }
+        currentActivity = existing
+        startDate = existing.content.state.startDate
+        selectedSubject = subjects.first { $0.name == existing.attributes.subjectName }
     }
     
     private func start() {
-        startDate = .now
+        guard let subject = selectedSubject else { return }
+        let now = Date.now
+        startDate = now
+        
+        let attributes = TimerActivityAttributes(subjectName: subject.name)
+        let state = TimerActivityAttributes.ContentState(startDate: now)
+        
+        do {
+            currentActivity = try Activity.request(attributes: attributes, content: .init(state: state, staleDate: nil)
+            )
+        } catch {
+            print("Failed to start live activity \(error)")
+        }
     }
     
     private func stop() {
