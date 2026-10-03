@@ -17,10 +17,10 @@ Contribution graphs are motivating. The visual streak of GitHubs own graph is a 
 - **Subjects created as you go** - add a subject once and it is saved for next time.
 - **View subject totals** - totals screen where you can view total time on each subject per day / week / month / all time.
 - **Onboarding screens** - onboarding screens ask for your name and what subjects you want to start off with.
+- **Live activity / dynamic island support** - a timer view on the dynamic island and live activities 
 ## Planned
  
 - Per subject contribution graphs.
-- A Live Activity / Dynamic Island view for the running timer.
 ## Tech Stack
  
 - **SwiftUI** for the entire interface, including a custom top down animated panel (custom overlay + transition).
