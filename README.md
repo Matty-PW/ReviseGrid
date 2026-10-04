@@ -1,7 +1,16 @@
-# ReviseGrid
- 
-A GitHub style contribution graph for your revision - log sessions from a home screen widget and track your streak.
- 
+<div align="center">
+ <img src="ReviseGrid/Assets.xcassets/AppIcon.appiconset/Icon-iOS-Dark-1024x1024@1x 1.png" alt="App Logo" width="128" height="128">
+</div>
+
+<h1 align="center">
+ ReviseGrid
+</h1>
+
+<p align="center">
+ A GitHub style contribution graph for your revision - log sessions from a home screen widget and track your streak.
+</p>
+
+
 ## Why
  
 Contribution graphs are motivating. The visual streak of GitHubs own graph is a great habit hook. ReviseGrid applies that same idea to studying - every subject you revise adds to a single daily square, and the more time you put in on a given day, the greener it gets.
