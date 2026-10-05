@@ -124,7 +124,14 @@ struct TimerLogView: View {
         } catch {
             print("Failed to save session \(error)")
         }
-        
+        endActivity()
         onDismiss()
+    }
+    
+    private func endActivity() {
+        guard let currentActivity else { return }
+        Task {
+            await currentActivity.end(nil, dismissalPolicy: .immediate)
+        }
     }
 }
