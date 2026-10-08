@@ -7,58 +7,84 @@
 
 import SwiftUI
 import SwiftData
-import WidgetKit
-import ActivityKit
 
 struct TimerLogView: View {
-    @Environment(\.modelContext) private var modelContext
     let onDismiss: () -> Void
-    
+
     @Query(sort: \Subject.name) private var subjects: [Subject]
-    
     @State private var selectedSubject: Subject?
-    @State private var startDate: Date?
     @State private var showingCancelConfirmation = false
-    @State private var currentActivity: Activity<TimerActivityAttributes>?
-    
-    private var isRunning: Bool { startDate != nil }
-    
+
+    private var timer: TimerController { .shared }
+    private var isActive: Bool { timer.state != nil }
+    private var isPaused: Bool { timer.state?.pausedElapsed != nil }
+
     var body: some View {
         NavigationStack {
             VStack(spacing: 28) {
                 SubjectPickerView(selectedSubject: $selectedSubject)
-                    .disabled(isRunning)
+                    .disabled(isActive)
                     .padding(.horizontal)
-                
+
                 Group {
-                if let startDate {
-                    Text(startDate, style: .timer)
-                } else {
-                    Text("00:00")
+                    if let state = timer.state {
+                        TimerReadoutView(state: state)
+                    } else {
+                        Text("0:00")
+                    }
                 }
-            }
-            .font(.system(size: 56, weight: .bold, design: .rounded))
-            .monospacedDigit()
-            .foregroundStyle(isRunning ? .primary : .secondary)
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, 20)
-            .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 20))
-            .padding(.horizontal)
-            
-                Button {
-                    isRunning ? stop() : start()
-                } label: {
-                    Text(isRunning ? "Stop" : "Start")
-                        .font(.headline)
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 4)
-                }
-                .buttonStyle(.borderedProminent)
-                .disabled(selectedSubject == nil)
-                .tint(isRunning ? .red : .green)
-                .controlSize(.large)
+                .font(.system(size: 56, weight: .bold, design: .rounded))
+                .monospacedDigit()
+                .foregroundStyle(isActive && !isPaused ? .primary : .secondary)
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 20)
+                .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 20))
                 .padding(.horizontal)
-                
+
+                if isActive {
+                    HStack(spacing: 12) {
+                        Button {
+                            Task { await timer.togglePause() }
+                        } label: {
+                            Text(isPaused ? "Resume" : "Pause")
+                                .font(.headline)
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 4)
+                        }
+                        .buttonStyle(.bordered)
+
+                        Button {
+                            Task { await timer.stop() }
+                            onDismiss()
+                        } label: {
+                            Text("Stop")
+                                .font(.headline)
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 4)
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .tint(.red)
+                    }
+                    .controlSize(.large)
+                    .padding(.horizontal)
+                } else {
+                    Button {
+                        if let subject = selectedSubject {
+                            timer.start(subjectName: subject.name)
+                        }
+                    } label: {
+                        Text("Start")
+                            .font(.headline)
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 4)
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .tint(.green)
+                    .controlSize(.large)
+                    .disabled(selectedSubject == nil)
+                    .padding(.horizontal)
+                }
+
                 Spacer()
             }
             .padding(.top, 24)
@@ -67,7 +93,7 @@ struct TimerLogView: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") {
-                        if isRunning {
+                        if isActive {
                             showingCancelConfirmation = true
                         } else {
                             onDismiss()
@@ -76,62 +102,19 @@ struct TimerLogView: View {
                 }
             }
             .alert("Discard this session?", isPresented: $showingCancelConfirmation) {
-                Button("Discard", role: .destructive) { onDismiss() }
+                Button("Discard", role: .destructive) {
+                    Task { await timer.discard() }
+                    onDismiss()
+                }
                 Button("Keep Going", role: .cancel) { }
             } message: {
-                Text("Your timer is still running. Cancelling now won't save this session.")
+                Text("Your timer is still active. Cancelling now won't save this session.")
             }
         }
-        .task {
-            reattachToRunningActivityIfNeeded()
-        }
-    }
-    
-    private func reattachToRunningActivityIfNeeded() {
-        guard currentActivity == nil, let existing = Activity<TimerActivityAttributes>.activities.first else { return }
-        currentActivity = existing
-        startDate = existing.content.state.startDate
-        selectedSubject = subjects.first { $0.name == existing.attributes.subjectName }
-    }
-    
-    private func start() {
-        guard let subject = selectedSubject else { return }
-        let now = Date.now
-        startDate = now
-        
-        let attributes = TimerActivityAttributes(subjectName: subject.name)
-        let state = TimerActivityAttributes.ContentState(startDate: now)
-        
-        do {
-            currentActivity = try Activity.request(attributes: attributes, content: .init(state: state, staleDate: nil)
-            )
-        } catch {
-            print("Failed to start live activity \(error)")
-        }
-    }
-    
-    private func stop() {
-        guard let startDate, let subject = selectedSubject else { return }
-        let elapsedSeconds = Date.now.timeIntervalSince(startDate)
-        let minutes = max(1, Int(elapsedSeconds / 60))
-        
-        let session = RevisionSession(date: startDate, durationMinutes: minutes, subject: subject)
-        modelContext.insert(session)
-        
-        do {
-            try modelContext.save()
-            WidgetCenter.shared.reloadAllTimelines()
-        } catch {
-            print("Failed to save session \(error)")
-        }
-        endActivity()
-        onDismiss()
-    }
-    
-    private func endActivity() {
-        guard let currentActivity else { return }
-        Task {
-            await currentActivity.end(nil, dismissalPolicy: .immediate)
+        .onAppear {
+            if let name = timer.subjectName {
+                selectedSubject = subjects.first { $0.name == name }
+            }
         }
     }
 }

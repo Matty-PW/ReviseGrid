@@ -11,6 +11,12 @@
 		482AAE74305EC864005077BF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482AAE72305EC864005077BF /* SettingsView.swift */; };
 		484E71D4307051B300913562 /* TimerActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484E71D3307051B300913562 /* TimerActivityAttributes.swift */; };
 		484E71D5307051B300913562 /* TimerActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484E71D3307051B300913562 /* TimerActivityAttributes.swift */; };
+		484E71FC3074286E00913562 /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484E71FB3074286E00913562 /* TimerController.swift */; };
+		484E71FD3074286E00913562 /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484E71FB3074286E00913562 /* TimerController.swift */; };
+		484E71FF3078269E00913562 /* TimerIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484E71FE3078269E00913562 /* TimerIntents.swift */; };
+		484E72003078269E00913562 /* TimerIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484E71FE3078269E00913562 /* TimerIntents.swift */; };
+		484E720530782A7200913562 /* TimerReadoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484E720430782A7200913562 /* TimerReadoutView.swift */; };
+		484E720630782A7200913562 /* TimerReadoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484E720430782A7200913562 /* TimerReadoutView.swift */; };
 		48676D723055CA0900F9D461 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48DDE47D30509B510083CA78 /* WidgetKit.framework */; };
 		48676D733055CA0900F9D461 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48DDE47F30509B510083CA78 /* SwiftUI.framework */; };
 		48676D8B3055CF4500F9D461 /* ContributionGraphCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B8C62D304CB93B00DEEFF0 /* ContributionGraphCalculator.swift */; };
@@ -81,6 +87,9 @@
 /* Begin PBXFileReference section */
 		482AAE72305EC864005077BF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		484E71D3307051B300913562 /* TimerActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerActivityAttributes.swift; sourceTree = "<group>"; };
+		484E71FB3074286E00913562 /* TimerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerController.swift; sourceTree = "<group>"; };
+		484E71FE3078269E00913562 /* TimerIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerIntents.swift; sourceTree = "<group>"; };
+		484E720430782A7200913562 /* TimerReadoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerReadoutView.swift; sourceTree = "<group>"; };
 		48676D713055CA0900F9D461 /* RevisionWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RevisionWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		48676D8A3055CD9F00F9D461 /* RevisionWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RevisionWidgetExtension.entitlements; sourceTree = "<group>"; };
 		48676D953058946600F9D461 /* SubjectTotalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectTotalsView.swift; sourceTree = "<group>"; };
@@ -180,6 +189,9 @@
 			isa = PBXGroup;
 			children = (
 				484E71D3307051B300913562 /* TimerActivityAttributes.swift */,
+				484E71FB3074286E00913562 /* TimerController.swift */,
+				484E71FE3078269E00913562 /* TimerIntents.swift */,
+				484E720430782A7200913562 /* TimerReadoutView.swift */,
 			);
 			path = LiveActivity;
 			sourceTree = "<group>";
@@ -462,16 +474,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				484E720530782A7200913562 /* TimerReadoutView.swift in Sources */,
 				484E71D5307051B300913562 /* TimerActivityAttributes.swift in Sources */,
 				48676D8D3055CF5900F9D461 /* Subject.swift in Sources */,
 				48676D8B3055CF4500F9D461 /* ContributionGraphCalculator.swift in Sources */,
 				482AAE74305EC864005077BF /* SettingsView.swift in Sources */,
 				48676D973058946600F9D461 /* SubjectTotalsView.swift in Sources */,
 				48676D8C3055CF5100F9D461 /* StreakCalculator.swift in Sources */,
+				484E71FC3074286E00913562 /* TimerController.swift in Sources */,
 				48676D993059A0A200F9D461 /* Colour+Hex.swift in Sources */,
 				48676D8F3055CF6A00F9D461 /* SharedModelContainer.swift in Sources */,
 				48676D8E3055CF6600F9D461 /* RevisionSession.swift in Sources */,
 				48676D9D3059A2C500F9D461 /* ContributionLevelColor.swift in Sources */,
+				484E71FF3078269E00913562 /* TimerIntents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,15 +500,18 @@
 				48676D963058946600F9D461 /* SubjectTotalsView.swift in Sources */,
 				48B8C630304CBD1E00DEEFF0 /* StreakCalculator.swift in Sources */,
 				482AAE73305EC864005077BF /* SettingsView.swift in Sources */,
+				484E720630782A7200913562 /* TimerReadoutView.swift in Sources */,
 				48B8C633304CBE3100DEEFF0 /* ContributionGraphView.swift in Sources */,
 				484E71D4307051B300913562 /* TimerActivityAttributes.swift in Sources */,
 				48B8C627304B3BA700DEEFF0 /* Subject.swift in Sources */,
 				48B8C63A304DCCDC00DEEFF0 /* TimerLogView.swift in Sources */,
+				484E71FD3074286E00913562 /* TimerController.swift in Sources */,
 				48676D9F3059ABDF00F9D461 /* OnboardingView.swift in Sources */,
 				48B8C636304DBFA200DEEFF0 /* SubjectPickerView.swift in Sources */,
 				48DE730A304F505C00C61453 /* LogPanelContainer.swift in Sources */,
 				48DE7306304F4D9B00C61453 /* LogPanelViewModel.swift in Sources */,
 				48676D9A3059A0A200F9D461 /* Colour+Hex.swift in Sources */,
+				484E72003078269E00913562 /* TimerIntents.swift in Sources */,
 				48B8C62B304B416A00DEEFF0 /* SharedModelContainer.swift in Sources */,
 				48B8C629304B3D4C00DEEFF0 /* RevisionSession.swift in Sources */,
 				48B8C638304DC46500DEEFF0 /* ManualLogFormView.swift in Sources */,
